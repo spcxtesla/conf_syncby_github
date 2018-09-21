@@ -1,0 +1,2 @@
+alias pc='proxychains4'
+
