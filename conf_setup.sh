@@ -11,8 +11,16 @@ ln -s ~/conf_syncby_github/vimrc		~/.vimrc
 #git submodule update
 
 echo "install plugin..."
-sudo apt-get install fonts-powerline
 vi +BundleInstall! +qall
+
+echo "install fonts-powerline..."
+sudo apt-get install fonts-powerline
+
+echo "compile ycm..."
+sudo apt install build-essential cmake python3-dev
+cd ~/.vim/bundle/YouCompleteMe
+python3 install.py --clang-completer
+
 
 echo "create other config..."
 ln -s ~/conf_syncby_github/ss.json				~/ss.json
